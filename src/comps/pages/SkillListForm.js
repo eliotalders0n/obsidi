@@ -18,22 +18,6 @@ class SkillsListForm extends Component {
     });
   }
 
-  // componentDidMount() {
-  //   // Fetch the skills.txt file
-  //   fetch("/assets/skills_list.txt")
-  //     .then((response) => response.text())
-  //     .then((text) => {
-  //       // Split the text content by lines to get an array of skills
-  //       const skillsArray = text
-  //         .split("\n")
-  //         .filter((skill) => skill.trim() !== "");
-  //       this.setState({ skillsFromFile: skillsArray });
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching skills from file:", error);
-  //     });
-  // }
-
   componentDidMount() {
     // Fetch the skills.txt file
     fetch("/assets/skills_list.txt")
@@ -109,21 +93,12 @@ class SkillsListForm extends Component {
 
     return (
       <div>
-        {/* <label>Select a skill:</label>
-        <Form.Select value={selectedSkill} onChange={this.handleSkillChange}>
-          <option value="">Select a skill</option>
-          {skillsFromFile.map((skill, index) => (
-            <option key={index} value={skill}>
-              {skill}
-            </option>
-          ))}
-        </Form.Select> */}
-        <label>Type to search for a skill:</label>
+        <Form.Label>Skills</Form.Label>
         <Form.Control
           type="text"
           value={selectedSkill}
           onChange={this.handleInputChange} // Handle input changes
-          placeholder="Search for a skill"
+          placeholder="Type to search for a skill"
         />
 
         {/* Render the search results */}

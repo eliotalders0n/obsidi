@@ -16,7 +16,8 @@ import Head from "../template/head";
 import { Link } from "react-router-dom";
 
 function Landing(props) {
-  const [show, setShow] = useState(true);
+
+  const [show, setShow] = useState(false);
 
   return (
     <div className="container">
@@ -33,7 +34,7 @@ function Landing(props) {
             X
           </Button>
         </div>
-        {/* <h1 class="display-4"><b>BFUTR2023</b> Get Your <b>VIP</b> Ticket Now</h1> */}
+        <h1 class="display-4"><b>BFUTR2023</b> Get Your <b>VIP</b> Ticket Now</h1>
         <img
           src="assets/bfutr.png"
           style={{ width: "70%", marginLeft: "15%" }}
@@ -44,6 +45,7 @@ function Landing(props) {
         </Link>
       </Alert>
       <Head />
+
       <Container style={{ backgroundColor: "#d6d6d6", paddingBottom: "10%" }}>
         <Row>
           <Col

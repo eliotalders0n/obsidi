@@ -128,7 +128,7 @@ function Profile1(props) {
 
                   <Form.Group className="mb-3" controlId="formGridAddress1">
                     <SkillListForm />
-                  </Form.Group>                  
+                  </Form.Group>
                   <br />
                   <Form.Group controlId="formGridAddress1">
                     <p className="text-center lead">What are you here for?</p>
