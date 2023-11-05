@@ -42,16 +42,16 @@ function Profile1(props) {
   };
 
   return (
-    <Container>
+    <Container fluid style={{ backgroundColor: "black", paddingBottom: "10%", width: "100%" }}>
       <Head />
       <Container>
         <Row className="d-flex justify-content-center my-4">
-          <Card style={{ width: "25rem" }}>
-            <Card.Img
+          <Card style={{ width: "30rem", background: "linear-gradient(to bottom, rgb(126,69,196), black)", color: "white" }}>
+            {/* <Card.Img
               variant="top"
               src="https://img.freepik.com/free-vector/photo-sharing-concept-illustration_114360-275.jpg?w=826&t=st=1695218462~exp=1695219062~hmac=0b0e9b99cf9e6ab3526843cb1353167347dcb6ef5752dd4c6c83700a66165937"
               style={{ width: "50%", margin: "0 25%" }}
-            />
+            /> */}
             <Card.Body>
               <Card.Title>Tell us about yourself</Card.Title>
               <Card.Text>

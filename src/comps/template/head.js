@@ -1,21 +1,31 @@
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { useState } from "react";
-import { Modal } from "react-bootstrap";
 import {
   Row,
   Col,
   InputGroup,
   Card,
+  Modal,
   Form,
   Container,
   Button,
   ListGroup,
+  ButtonGroup,
+  ToggleButton
 } from "react-bootstrap";
 // import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 
 function Head() {
+
+  const [checked, setChecked] = useState(false);
+  const [radioValue, setRadioValue] = useState('1');
+
+  const radios = [
+    { name: 'Login', value: '1' },
+    { name: 'Signup', value: '2' },
+  ];
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
 
@@ -26,57 +36,36 @@ function Head() {
   const handleShowReg = () => setShowRegister(true);
 
   return (
-    <Navbar sticky="top" expand="lg" className="bg-body-tertiary">
-      <Container fluid>
-        <Navbar.Brand href="/">OBSIDI</Navbar.Brand>
+    <Navbar sticky="top" expand="lg" className="bg-body-dark">
+      <Container >
+        <Navbar.Brand href="/" style={{color:"white"}}>OBSIDI</Navbar.Brand>
 
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
+            style={{ maxHeight: "100px"}}
             navbarScroll
           >
-            <Nav.Link href="https://app.obsidi.com/home/jobs">
+            <Nav.Link href="https://app.obsidi.com/home/jobs" style={{color:"white" }}>
               Find Jobs
             </Nav.Link>
-            <Nav.Link href="https://obsidi.com/recruit/">Post Jobs</Nav.Link>
-            {/* <NavDropdown title="Communities" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="https://obsidi.com/communities/">Members</NavDropdown.Item>
-              <NavDropdown.Item href="https://obsidi.com/communities/">
-                Obsidi Recruit
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="https://obsidi.com/recruit/">Partners</NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="https://obsidi.com/cultivate/">Mentorship</Nav.Link>
-            <Nav.Link href="https://obsidi.com/frequently-asked-question/">Resources</Nav.Link> */}
+            <Nav.Link href="https://obsidi.com/recruit/" style={{color:"white" }}>Post Jobs</Nav.Link>
           </Nav>
           <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search Jobs | Location"
-              className="me-3"
-              aria-label="Search"
-            />
-            {/* <Button variant="outline-success" className="me-5">Search</Button> */}
-            {/* <Link to="/login"> */}
-            <Button variant="dark" className="me-2" onClick={handleShow}>
-              Signup
-            </Button>
-            {/* </Link> */}
-            {/* <Link to="/login"> */}
-            <Button variant="outline-dark" onClick={handleShow}>
+            <Button style={{color:"white", backgroundColor: "rgb(126,69,196)", border: "none" }} onClick={handleShow}>
               Login
             </Button>
-            {/* </Link> */}
+            <Button style={{color:"rgb(126,69,196)", borderColor: "rgb(126,69,196)", backgroundColor: "black", border: "1px solid" }} className="mx-3" onClick={handleShow}>
+              Signup
+            </Button>
           </Form>
         </Navbar.Collapse>
       </Container>
 
       <Modal show={showLogin} onHide={handleClose}>
-        <Modal.Body>
-          <Card style={{ border: "none" }}>
+        <Modal.Body style={{ border: "none", backgroundColor: "rgb(26,26,26)"}}>
+          <Card style={{ border: "none", backgroundColor: "rgb(26,26,26)", color:"white" }}>
             <Card.Img
               variant="top"
               src="https://app.obsidi.com/assets/logos/bptn/obsidi_logo_white.png"
@@ -90,7 +79,23 @@ function Head() {
                 <br />
                 <br />
               </Card.Text>
-
+             <ButtonGroup  style={{ width: "80%", marginLeft: "10%", marginBottom: "5%"}}>
+        {radios.map((radio, idx) => (
+          <ToggleButton
+            key={idx}
+            id={`radio-${idx}`}
+            type="radio"         
+            variant={idx % 2 ? 'outline-light' : 'outline-light'}
+            name="radio"
+            value={radio.value}
+            checked={radioValue === radio.value}
+            onChange={(e) => setRadioValue(e.currentTarget.value)}
+          >
+            {radio.name}
+          </ToggleButton>
+        ))}
+      </ButtonGroup>
+      
               <Row className="justify-content-center">
                 <span className="text-center">
                   {" "}
@@ -114,39 +119,41 @@ function Head() {
               </Row>
               <ListGroup className="list-group-flush">
                 <form>
-                  <ListGroup.Item style={{ border: "none" }}>
-                    <InputGroup size="sm" className="mb-3">
-                      <InputGroup.Text id="inputGroup-sizing-sm">
+                  <ListGroup.Item style={{ border: "none", backgroundColor: "rgb(26,26,26)", color:"white"}}>
+                    <InputGroup size="sm" className="mb-3" style={{backgroundColor: "rgb(26,26,26)", color:"white"}}>
+                      <InputGroup.Text id="inputGroup-sizing-sm" style={{backgroundColor: "rgb(26,26,26)", color:"rgb(150,150,150)",border:"none"}}>
                         Email
                       </InputGroup.Text>
                       <Form.Control
                         aria-label="email"
                         aria-describedby="inputGroup-sizing-sm"
                         type="email"
+                        style={{backgroundColor: "black", color:"white", border:"none"}}
                       />
                     </InputGroup>
                     <InputGroup size="sm" className="mb-3">
-                      <InputGroup.Text id="inputGroup-sizing-sm">
+                      <InputGroup.Text id="inputGroup-sizing-sm" style={{backgroundColor: "rgb(26,26,26)", color:"rgb(150,150,150)", border:"none"}}>
                         Password
                       </InputGroup.Text>
                       <Form.Control
                         aria-label="password"
                         aria-describedby="inputGroup-sizing-sm"
                         type="password"
+                        style={{backgroundColor: "black", color:"white", border:"none"}}
                       />
                     </InputGroup>
                     <Row>
                       <Col>
                         <Link to="/profile1">
-                          <Button variant="dark" style={{ width: "100%" }}>
+                          <Button variant="dark" style={{ width: "100%", color:"white", backgroundColor: "rgb(126,69,196)", border: "none" }}>
                             Login
                           </Button>
                         </Link>
                       </Col>
                       <Link to="/profile1">
                         <br />
-                        <Button variant="outline-dark" onClick={handleShowReg}>
-                          Not a member yet? Signup
+                        <Button variant="outline-dark" onClick={handleShowReg} style={{color: "white"}}>
+                          Forgot Password?
                         </Button>
                       </Link>
                     </Row>

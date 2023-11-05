@@ -3,7 +3,7 @@ import { Button, Col, Form, Nav, Row } from "react-bootstrap";
 
 function Header(props) {
   return (
-    <Row style={{boxShadow: "1px 1px 3px 1px rgba(0,0,0,0.1)", backgroundColor:"white"}}>
+    <Row style={{boxShadow: "1px 1px 3px 1px rgba(0,0,0,0.1)", background: "linear-gradient(to bottom, rgb(126,69,196), black)", color:"white"}}>
       <Col>
         <Nav
           className="justify-content-start"
@@ -11,7 +11,7 @@ function Header(props) {
           style={{  padding: "20px 10px" }}
         >
           <Nav.Item>
-            <Nav.Link href="/" style={{color:"black"}}><b>OBSIDI</b></Nav.Link>
+            <Nav.Link href="/" style={{color:"white"}}><b>OBSIDI</b></Nav.Link>
           </Nav.Item>
           <Nav.Item className="mx-3">
             <Form.Control
@@ -51,7 +51,7 @@ function Header(props) {
           style={{ padding: "20px 10px" }}
         >
           <Nav.Item href="/">
-            <Button variant="outline-dark">Logout</Button>
+            <Button variant="outline-light">Logout</Button>
           </Nav.Item>
         </Nav>
       </Col>

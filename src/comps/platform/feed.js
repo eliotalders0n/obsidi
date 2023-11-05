@@ -8,7 +8,7 @@ function Feed(props) {
   const [show, setShow] = useState(true);
 
   return (
-    <Container fluid style={{ backgroundColor: "rgb(240,240,240)" }}>
+    <Container fluid style={{ backgroundColor: "black" }}>
       <Header />
       <Row>
         <Col style={{}}>
@@ -17,7 +17,7 @@ function Feed(props) {
         <Col style={{ marginTop: "30px" }}>
           <div
             style={{
-              backgroundColor: "white",
+              backgroundColor: "rgb(66,66,66)",
               borderRadius: "10px",
               padding: "10px",
             }}
@@ -27,7 +27,7 @@ function Feed(props) {
               alt="somewhere4"
               style={{ borderRadius: "50px", width: "10%", marginRight: "2%" }}
             />
-            <Button variant="outline-dark" size="lg" style={{ width: "80%" }}>
+            <Button variant="outline-light" size="lg" style={{ width: "80%" }}>
               Create Post
             </Button>
             <Button
@@ -43,9 +43,9 @@ function Feed(props) {
             <Alert
               show={show}
               style={{
-                backgroundColor: "white",
+                backgroundColor: "rgb(66,66,66)",
                 border: "none",
-                color: "black",
+                color: "white",
               }}
             >
               <div className="d-flex justify-content-end">
@@ -62,7 +62,7 @@ function Feed(props) {
                 Add more to your work experiences and education{" "}
               </p>
               <Link to="https://obsidi.com/bfutr/">
-                <Button variant="outline-dark" style={{}}>
+                <Button variant="outline-light" style={{}}>
                   Update Profile
                 </Button>
               </Link>
@@ -71,10 +71,11 @@ function Feed(props) {
           <hr />
           <div
             style={{
-              backgroundColor: "white",
+              backgroundColor: "rgb(46,46,46)",
               borderRadius: "10px",
               padding: "10px",
               margin: "10px 0",
+              color: "white"
             }}
           >
             <Row style={{width:"60vh"}}>
@@ -113,17 +114,18 @@ function Feed(props) {
             />
             <hr/>
             <Row>
-                <Col><Button variant="light" size="sm" style={{width:"100%", border:"none"}}><img src="assets/like.png"/>  Like</Button></Col>
-                <Col><Button variant="light" size="sm" style={{width:"100%", border:"none"}}><img src="assets/share.png"/> Share</Button></Col>
+                <Col><Button variant="outline-light" size="sm" style={{width:"100%", border:"none"}}><img src="assets/like.png"/>  Like</Button></Col>
+                <Col><Button variant="outline-light" size="sm" style={{width:"100%", border:"none"}}><img src="assets/share.png"/> Share</Button></Col>
             </Row>
           </div>
 
           <div
             style={{
-              backgroundColor: "white",
+              backgroundColor: "rgb(46,46,46)",
               borderRadius: "10px",
               padding: "10px",
               margin: "10px 0",
+              color: "white"
             }}
           >
             <Row>
@@ -162,17 +164,18 @@ function Feed(props) {
             />
              <hr/>
             <Row>
-                <Col><Button variant="light" size="sm" style={{width:"100%", border:"none"}}><img src="assets/like.png"/>  Like</Button></Col>
-                <Col><Button variant="light" size="sm" style={{width:"100%", border:"none"}}><img src="assets/share.png"/> Share</Button></Col>
+                <Col><Button variant="outline-light" size="sm" style={{width:"100%", border:"none"}}><img src="assets/like.png"/>  Like</Button></Col>
+                <Col><Button variant="outline-light" size="sm" style={{width:"100%", border:"none"}}><img src="assets/share.png"/> Share</Button></Col>
             </Row>
           </div>
 
           <div
             style={{
-              backgroundColor: "white",
+              backgroundColor: "rgb(46,46,46)",
               borderRadius: "10px",
               padding: "10px",
               margin: "10px 0",
+              color: "white"
             }}
           >
             <Row>
@@ -211,8 +214,8 @@ function Feed(props) {
             />
              <hr/>
             <Row>
-                <Col><Button variant="light" size="sm" style={{width:"100%", border:"none"}}><img src="assets/like.png"/>  Like</Button></Col>
-                <Col><Button variant="light" size="sm" style={{width:"100%", border:"none"}}><img src="assets/share.png"/> Share</Button></Col>
+                <Col><Button variant="outline-light" size="sm" style={{width:"100%", border:"none"}}><img src="assets/like.png"/>  Like</Button></Col>
+                <Col><Button variant="outline-light" size="sm" style={{width:"100%", border:"none"}}><img src="assets/share.png"/> Share</Button></Col>
             </Row>
           </div>
         </Col>
