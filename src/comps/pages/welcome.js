@@ -19,8 +19,8 @@ function Welcome(props) {
               searching <br /> on roles that are perfect fit for your skills and needs.
             </p>
             <ButtonGroup style={{margin: "0 42%", width:"30%"}}>
-            <Link to="/feed"> <Button variant="outline-light">View my profile</Button></Link>
-                <Link to="/feed"> <Button variant="dark" className="mx-3">Explore OBSIDI</Button></Link>
+            <Link to="/feed"> <Button variant="outline-light">Explore Jobs</Button></Link>
+                <Link to="/feed"> <Button variant="dark" className="mx-3">Complete Profile</Button></Link>
             </ButtonGroup>
           </Col>
         </Row>

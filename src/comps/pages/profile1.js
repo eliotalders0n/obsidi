@@ -75,21 +75,27 @@ function Profile1(props) {
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="formGridAddress1">
-                    <Form.Label>Date of Birth</Form.Label>
-                    <br />
-                    <DatePicker
-                      selected={startDate}
-                      onChange={(date) => setStartDate(date)}
-                    />
+                    <Form.Label>Age Range</Form.Label>
+                    <Form.Select
+                      aria-label="Default select example"
+                      id="citySelect"
+                      name="city"
+                      value={selectedCity}
+                      onChange={handleCityChange}
+                    >
+                      <option value="">2</option>
+                      <option value="">Select a city</option>
+                      <option value="">Select a city</option>
+                    </Form.Select>
                   </Form.Group>
 
-                  <Form.Label>Race</Form.Label>
+                  {/* <Form.Label>Race</Form.Label>
                   <Form.Select aria-label="Default select example">
                     <option>Black</option>
                     <option value="1">White</option>
                     <option value="2">Asian</option>
                     <option value="3">Indigenous or Native Peoples</option>
-                  </Form.Select>
+                  </Form.Select> */}
 <br/>
                   <Form.Group className="mb-3" controlId="formGridAddress1">
                     <Form.Label>Country</Form.Label>
@@ -126,21 +132,20 @@ function Profile1(props) {
                     </Form.Select>
                   </Form.Group>
 
-                  <Form.Group className="mb-3" controlId="formGridAddress1">
+                  {/* <Form.Group className="mb-3" controlId="formGridAddress1">
                     <SkillListForm />
-                  </Form.Group>
+                  </Form.Group> */}
                   <br />
                   <Form.Group controlId="formGridAddress1">
-                    <p className="text-center lead">What are you here for?</p>
-                    <Form.Check label="Jobs" name="radio" type="radio" id="1"/>
+                    <p className="text-center lead">Do you identify as a member of the black community?</p>
                     <Form.Check
                       inline
-                      label="Community"
+                      label="Yes"
                       name="radio"
                       type="radio"
                       id="2"
                     />
-                    <Form.Check label="Both" name="radio" type="radio" id="3"/>
+                    <Form.Check label="No" name="radio" type="radio" id="3"/>
                   </Form.Group>
                 </Form>
               </Card.Text>
